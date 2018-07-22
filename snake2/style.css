@@ -1,0 +1,193 @@
+/*
+Autor : Eduardo Hidalgo [hhweb.es]
+Licensed under a Creative Commons Attribution 3.0 License
+*/
+body,html{
+	height:100%;
+	min-height:100%;
+}
+body{
+	margin:0;
+	background:#494B5A;
+	cursor:default;
+	font-family:Verdana, Geneva, sans-serif;
+}
+#bar{
+	width:auto;
+	height:85px;
+	background:#C9C7CA url(logo.png) center center no-repeat;
+	border-bottom:2px solid #3E2E44;
+	margin-bottom:15px;
+	padding:5px;
+}
+#autor{
+	font-size:10px;
+	height:30px;
+	width:100px;
+	position:absolute;
+	right:0;
+	bottom:0;
+	text-align:center;
+	padding-right:3px;
+}
+a{
+	outline:none;
+	color:#999;
+	text-decoration:none;
+}
+#container{
+	width:336px;
+	height:192px;
+	margin:auto;
+	border:10px solid #8EA792;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	background:#8EA792;
+}
+#info{
+	width:336px;
+	height:192px;
+	background:url(snake.png) 0px -236px;
+	overflow:auto
+}
+#info div{
+	float:left;
+	cursor:pointer;
+}
+#info div.active{
+	border:1px solid #060e0c;
+}
+#easy{
+	width:43px;
+	height:20px;
+	margin-left:29px;
+	margin-top:86px;
+}
+#hard{
+	width:43px;
+	height:20px;
+	margin-left:7px;
+	margin-top:86px;
+}
+#veryhard{
+	width:88px;
+	height:20px;
+	margin-left:7px;
+	margin-top:86px;
+}
+#score{
+	height:20px;
+	width:auto;
+	margin-left:4px;
+}
+#left,#right{
+	width:64px;
+	height:20px;
+	float:left;
+}
+#right{
+	width:72px;
+}
+#gameover{
+	width:164px;
+	height:20px;
+	float:left;
+	margin:0 16px 0 16px;
+}
+#gameover.show{
+	background:url(snake.png) -160px -20px;
+}
+.scores div{
+	width:16px;
+	height:20px;
+	background: url(snake.png) -144px -16px;
+	float:left;
+}
+
+#box{
+	width:320px;
+	height:144px;
+	padding:20px 8px 8px 8px;
+	background:url(snake.png) 0 -64px;
+}
+
+#box div{
+	width:16px;
+	height:16px;
+	float:left;
+	background: url(snake.png) -144px -16px;
+}
+#box.paused div{
+	display:none;
+}
+
+.scores div.p0{background-position:-160px 0px}
+.scores div.p1{background-position:-176px 0px}
+.scores div.p2{background-position:-192px 0px}
+.scores div.p3{background-position:-208px 0px}
+.scores div.p4{background-position:-224px 0px}
+.scores div.p5{background-position:-240px 0px}
+.scores div.p6{background-position:-256px 0px}
+.scores div.p7{background-position:-272px 0px}
+.scores div.p8{background-position:-288px 0px}
+.scores div.p9{background-position:-304px 0px}
+
+#box div.head-up{background-position:0px 0px}
+#box div.head-right{background-position:0px -16px}
+#box div.head-down{background-position:0px -32px}
+#box div.head-left{background-position:0px -48px}
+
+#box div.eath-up{background-position:-16px 0px}
+#box div.eath-right{background-position:-16px -16px}
+#box div.eath-down{background-position:-16px -32px}
+#box div.eath-left{background-position:-16px -48px}
+
+#box div.body-up{background-position:-32px 0px}
+#box div.body-right{background-position:-32px -16px}
+#box div.body-down{background-position:-32px -32px}
+#box div.body-left{background-position:-32px -48px}
+
+#box div.tail-up{background-position:-48px 0px}
+#box div.tail-right{background-position:-48px -16px}
+#box div.tail-down{background-position:-48px -32px}
+#box div.tail-left{background-position:-48px -48px}
+
+#box div.body-up.bola{background-position:-64px 0px}
+#box div.body-right.bola{background-position:-64px -16px}
+#box div.body-down.bola{background-position:-64px -32px}
+#box div.body-left.bola{background-position:-64px -48px}
+
+#box div.corner-upright{background-position:-80px 0px}
+#box div.corner-upleft{background-position:-80px -16px}
+#box div.corner-downright{background-position:-80px -32px}
+#box div.corner-downleft{background-position:-80px -48px}
+
+#box div.corner-rightup{background-position:-96px 0px}
+#box div.corner-rightdown{background-position:-96px -16px}
+#box div.corner-leftup{background-position:-96px -32px}
+#box div.corner-leftdown{background-position:-96px -48px}
+
+#box div.corner-upright.bola{background-position:-112px 0px}
+#box div.corner-upleft.bola{background-position:-112px -16px}
+#box div.corner-downright.bola{background-position:-112px -32px}
+#box div.corner-downleft.bola{background-position:-112px -48px}
+
+#box div.corner-rightup.bola{background-position:-128px 0px}
+#box div.corner-rightdown.bola{background-position:-128px -16px}
+#box div.corner-leftup.bola{background-position:-128px -32px}
+#box div.corner-leftdown.bola{background-position:-128px -48px}
+
+#box div.food{background-position:-144px 0px}
+
+#b3{margin-left:8px;}
+
+#box div.bixo.a1,#right div.bixo.a1{background-position:-160px -48px}
+#box div.bixo.b1,#right div.bixo.b1{background-position:-176px -48px}
+#box div.bixo.a2,#right div.bixo.a2{background-position:-192px -48px}
+#box div.bixo.b2,#right div.bixo.b2{background-position:-208px -48px}
+#box div.bixo.a3,#right div.bixo.a3{background-position:-224px -48px}
+#box div.bixo.b3,#right div.bixo.b3{background-position:-240px -48px}
+#box div.bixo.a4,#right div.bixo.a4{background-position:-256px -48px}
+#box div.bixo.b4,#right div.bixo.b4{background-position:-272px -48px}
+#box div.bixo.a5,#right div.bixo.a5{background-position:-288px -48px}
+#box div.bixo.b5,#right div.bixo.b5{background-position:-304px -48px}

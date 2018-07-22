@@ -1,0 +1,49 @@
+body{
+	margin:0;
+	background:#EEE;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	cursor:default;
+}
+#box{
+	margin:70px auto 0 auto;
+	background:#C3CACF;
+	
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+#hover,#back,#cols{
+	position:absolute;
+	padding:10px;
+}
+#hover{
+	padding:0;	
+	border:10px solid #1c3d5a;
+	
+	-moz-border-radius:10px;
+	border-radius:10px;
+	
+	-moz-box-shadow: 0px 2px 15px #555;	
+	-webkit-box-shadow: 0px 2px 15px #555;
+	box-shadow: 0px 0px 15px #555;	
+}
+.col{
+	float:left;	
+}
+.hcell{
+	width:44px;
+	height:44px;
+	background:url(./hover.png);
+	float:left;
+}
+.piece{
+	width:44px;
+	height:44px;
+	position:absolute;
+}
+.piece.yel{
+	background-image:url(./yel.png);	
+}
+.piece.red{
+	background-image:url(./red.png);	
+}

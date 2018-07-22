@@ -1,0 +1,144 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+body,html{
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+	min-height:100%;
+	font-family:'Raleway',Verdana, Geneva, sans-serif;
+	background-color:#774193;
+	cursor:default;
+}
+.hide{
+	display:none;	
+}
+
+#portada{
+	width:100%;
+	height:100%;
+	position:absolute;
+	background-color:#774193;
+}
+	#portada td{
+		vertical-align:middle;
+		height:25%;
+	}
+		#portada img{
+			display: block;
+			margin:0 auto;
+			max-width: 727px;
+			width: 100%;
+		}
+		#start{
+			width:90%;
+			margin:40px 5% 0 5%;
+			padding:8px 0;
+			font-size:20px;
+			color:#D63453;
+			text-align:center;
+			text-shadow:2px 2px 0px #35A5AE;
+			font-weight:bold;
+			border:3px solid #D63453;
+			cursor:pointer;
+			letter-spacing:4px;
+			background-color:#C9C9A3;
+		}
+		#start:hover{
+			background-color:#C6C679;
+		}
+
+#header{
+	background:#35A5AE url(images/logo_min.png) no-repeat center;
+	height:40px;
+	border-bottom:2px solid #D63453;
+}
+	#refresh{
+		width:40px;
+		height:30px;
+		float:right;
+		background:url(images/refresh.png) no-repeat center center;
+		margin-top:5px;
+		margin-right:5px;
+		cursor:pointer;
+	}
+	#help{
+		width:40px;
+		height:30px;
+		float:left;
+		background:url(images/help.png) no-repeat center center;
+		margin-top:5px;
+		margin-left:5px;
+		cursor:pointer;
+	}
+	#help.active{
+		background-color:#D63453;
+		border-radius:4px;
+	}
+#card_id{
+	font-size:10px;
+	color:#999;
+	vertical-align:bottom;
+}
+#card{
+	width:100%;
+	border-collapse:collapse;
+	background-color:#774193;
+}
+	#card .image{
+		width:90px;
+		padding-left:4px;
+		height:56px;
+		background:no-repeat center;
+	}
+	#card .palabras .image{background-image:url(images/palabras.png)}
+	#card .personajes .image{background-image:url(images/personajes.png)}
+	#card .iniciales .image{background-image:url(images/iniciales.png)}
+	#card .peliculas .image{background-image:url(images/peliculas.png)}
+	#card .fechas .image{background-image:url(images/fechas.png)}
+	
+	#card .info{
+		color:#eee;
+		font-size:20px;
+		padding:0 8px;
+	}
+	
+	#card .view .info{
+		background-color:#e2e2e2;
+		border-radius:5px 0 0 5px;
+	}
+	
+	
+	#card .val{
+		display:none;
+		color:#D63453;
+		font-size:18px;
+	}
+	#card .view .val{
+		display:block;
+	}
+	#card .view .key{
+		display:none;
+	}
+	
+#manual{
+	overflow:auto;
+	background-color:#e2e2e2;
+	color:#333;
+	padding:0 20px;
+	font-size:14px;
+	line-height:22px;
+}
+	#manual p{
+		margin:0;
+		padding:10px 0;
+	}
+	#manual h4{
+		font-size:22px;
+		font-weight:normal;
+		color:#666;
+		padding:0 0 4px 0;
+		margin:35px 0 14px 0;
+		border-bottom:1px solid #999;
+	}
+	

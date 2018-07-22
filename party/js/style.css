@@ -1,0 +1,790 @@
+html,body{
+	width:100%;
+	height:100%;
+	min-height:100%;
+	margin:0;
+	padding:0;
+	background-color:#ddd;
+}
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	cursor:default;
+}
+.hide{
+	display:none;
+}
+#loading{
+	font-size:40px;
+	color:#aaa;
+	text-align:center;
+}
+.centertable{
+	width:100%;
+	height:100%;
+	border-collapse:collapse;
+}
+.centertable td{
+	vertical-align:middle;
+	border:0;
+	padding:20px 0;
+}
+#bottom_bar{
+	width:850px;
+	margin:auto;	
+}
+#cc{
+	font-size:10px;
+	color:#555;
+	width:570px;
+	float:left;
+	padding-top:20px;
+}
+	#cc img{
+		padding-right:6px;
+		opacity:.7;
+		width:80px;
+		height:15px;
+	}
+	#cc a{
+		text-decoration:none;
+		color:#333;
+	}
+	#cc a:hover{
+		text-decoration:underline;
+	}
+	#cc img{
+		vertical-align:middle;
+	}
+#board{
+	width:830px;
+	height:822px;
+	margin:auto;
+	background-color:#CB3232;
+	padding:6px;
+	border:10px solid #5B1F1F;
+	border-radius:8px;
+	box-shadow:0 0 20px #222;
+	-webkit-box-shadow:0 0 20px #222;
+	border-collapse:separate;
+}
+
+
+/*Pantalla sobretablero y sus controles*/
+#cover,#timeup,#options{
+	background-color:#eee;
+	width:842px;
+	height:834px;
+	position:absolute;
+	z-index:100;
+	margin-left:-6px;
+	margin-top:-6px;
+}
+#cover.trans{
+	background-color:rgba(238,238,238,.6);
+}
+#cover.superhide{
+	display:none!important;
+}
+	.cover_control{
+		bottom:0;
+		height:120px;
+		background-color:#e1e1e1;
+		border-top:2px solid #ccc;
+		width:100%;
+		position:absolute;
+	}
+	.cover_control.sub_menu{
+		bottom:121px;	
+	}
+		.cover_button{
+			height:85px;
+			padding-top:35px;
+			background:no-repeat left center;
+			padding-left:130px;
+			color:#aaa;
+			font-size:40px;
+			text-shadow:2px 2px 2px #eee;
+			float:left;
+			cursor:pointer;
+			margin:0 30px;
+			/*background-image:url(../img/controls.png);*/
+		}
+		#sand_control{
+			background-position:0 -240px;
+		}
+		#sand_control.pause{
+			background-position:0 -360px;
+		}
+		#sand_control.restart,#reset_game{
+			background-position:0 -480px!important;
+		}
+		#result{
+			float:right;
+			background-position:0 -600px;
+		}
+		#start_game,#reset_game{
+			float:none;
+			margin:auto;
+			width:320px;
+			background-position:0 -720px;
+		}
+		#thumb_up{
+			background-position:0 -1080px;
+		}
+		#thumb_down{
+			background-position:0 -1200px;
+			float:right;
+		}
+
+#recover{
+	background-position:23% -480px;
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:#e1e1e1;
+	border-bottom:2px solid #ccc;
+	width:85%;
+	padding:0;
+	margin:0;
+	padding-top:35px;
+	text-align:center;
+	padding-left:15%;
+}
+
+#timeup{
+	z-index:101;
+	/*background-image:url(../img/timeup.png);*/
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-color:#e84f17
+}
+
+/*Opciones*/
+#see_options{
+	float:right;
+	text-align:center;
+	font-size:32px;
+	text-shadow:2px 2px 2px #eee;
+	cursor:pointer;
+	color:#888;
+	padding:8px 20px;
+}
+#see_options.opened{
+	color:#900;
+	font-weight:bold;
+}
+#options{
+	z-index:102;
+	background-color:rgba(238,238,238,.8);
+}
+	.option{
+		margin:auto;
+		width:400px;
+		height:45px;
+		padding:40px 0 40px 180px;
+		font-size:36px;
+		text-shadow:2px 2px 2px #222;
+		cursor:pointer;
+		color:#eee;
+		background-color:#888;
+		/*background-image:url(../img/option_bar.png);*/
+		background-position:-560px center;
+		background-repeat:no-repeat;
+		border-radius:30px;
+		-moz-border-radius:30px;
+		-webkit-border-radius:30px;
+		border:10px solid #ccc;
+		margin-bottom:-10px;
+	}
+
+/*Eleccion de jugadores*/
+#player_choose{
+	margin-left:80px;
+	margin-top:130px;
+}
+	.player{
+		margin-top:40px;
+	}
+	.player:after{
+		content:"";
+		height:0px;
+		clear:both;
+		display:block;
+	}
+		.change_color{
+			width:80px;
+			height:80px;
+			/*background-image:url(../img/chis.png);*/
+			float:left;
+			cursor:pointer;
+		}
+		.player input{
+			float:left;
+			font-size:30px;
+			color:#888;
+			padding:10px 10px 10px 80px;
+			width:360px;
+			border:none;
+			background-color:#eee;
+			/*background-image:url(../img/edit_input.png);*/
+			background-repeat:no-repeat;
+			background-position:20px center;
+			margin-left:40px;
+			margin-top:15px;
+			font-weight:bold;
+			text-shadow:2px 2px 2px #fff;
+		}
+		.player input:focus{
+			background-color:#e5e5e5;
+			color:#666;
+		}
+		.delete_player{
+			height:35px;
+			padding-top:15px;
+			background:no-repeat left center;
+			padding-left:60px;
+			color:#aaa;
+			font-size:20px;
+			text-shadow:2px 2px 2px #fff;
+			cursor:pointer;
+			/*background-image:url(../img/controls.png);*/
+			background-position:0 -960px;
+			margin:13px 0 0 20px;
+			float:left;
+		}
+	#add_player{
+		height:55px;
+		padding-top:25px;
+		background:no-repeat left center;
+		padding-left:90px;
+		color:#aaa;
+		font-size:26px;
+		text-shadow:2px 2px 2px #fff;
+		cursor:pointer;
+		/*background-image:url(../img/controls.png);*/
+		background-position:0 -840px;
+		margin:40px 0 0;
+		width:250px;
+	}
+
+/*Reloj de arena*/
+#sandglass_box{
+	position:absolute;
+	margin-top:150px;
+	margin-left:50px;
+	/*background-image:url(../img/sandglass.png);*/
+}
+	#sandglass{
+		position:absolute;
+		width:130px;
+		height:406px;
+		/*background-image:url(../img/sandglass.png);*/
+	}
+	#sand_up{
+		height:200px;
+		background-repeat:no-repeat;
+		/*background-image:url(../img/sand.png);*/
+		background-position:0 180px;
+		position:absolute;
+		width:130px;
+	}
+	#sand_down{
+		margin-top:200px;
+		height:206px;
+		background-repeat:no-repeat;
+		/*background-image:url(../img/sand.png);*/
+		background-position:-130px 34px;
+		position:absolute;
+		width:130px;
+	}
+	#sand_fall{
+		margin-top:200px;
+		height:206px;
+		background-repeat:no-repeat;
+		/*background-image:url(../img/sand.png);*/
+		background-position:-260px 0px;
+		position:absolute;
+		width:130px;
+	}
+	#sand_fall.spin{
+		background-position:-260px -47px;
+	}
+#trial {
+    /*height:430px;*/
+    margin-left:230px;
+    margin-top:140px;
+    position:absolute;
+    width:540px;
+	text-shadow:2px 2px 2px #fff;
+	color:#555;
+	background-color:#e1e1e1;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	padding:10px 10px 40px 10px;
+}
+#trial.disc_trial{
+	padding:3px 3px 33px 3px;
+	border:7px dashed #ED4747 ;	
+}
+	.trial_type{
+		font-size:24px;
+		color:#888;
+		padding:23px 0 20px 160px;
+		background-repeat:no-repeat;
+		background-position:30px -100px;
+	}
+	
+	.trial_type.disc_trial{ 
+		background-position:30px 0;
+	}
+	
+		.trial_type i{
+			display:block;
+			font-size:16px;
+		}
+	#trial_ask{	
+		font-size:40px;
+		text-align:center;
+		margin-top:40px;
+	}
+	#trial_sol{
+		font-size:40px;
+		text-align:center;
+		margin-top:40px;
+		font-weight:bold;
+	}
+	#trial_wor{
+		border-collapse:collapse;
+		width:100%;
+		margin-top:40px;
+	}
+		#trial_wor td{
+			padding-bottom:25px;
+			font-size:36px;
+			text-align:center;
+		}
+		
+	#trial_table{
+		font-size:20px;
+		padding-top:20px
+	}
+		#trial_table td div{
+			width:50px;
+			height:50px;
+			background-position:-25px -25px;
+			border-radius:6px;
+			-webkit-border-radius:6px;
+		}
+		#trial_table td{
+			padding:6px;
+		}
+		#trial_table .sol{
+			font-weight:bold;
+		}
+	
+	#trial_unhide{
+		background-position: 0 -1440px;
+		float:none;
+		width:315px;
+		margin:50px auto 0 auto;
+	}
+	#trial_canvas{
+		background-position: 0 -1320px;
+		float:none;
+		width:165px;
+		margin:50px auto 0 auto;
+	}
+	#trial_tohide{
+		display:none;
+	}
+	#trial.unhide #trial_unhide{
+		display:none;
+	}
+	#trial.unhide #trial_tohide{
+		display:block;
+	}
+		
+/*turn info*/
+#turn_msg{
+	font-size:80px;
+	color:#555;
+	text-shadow:2px 2px #eee;
+	font-weight:bold;
+	text-align:center;
+	position:absolute;
+	margin-top:300px;
+	margin-left:50px;
+}
+.turn_info{
+	float:right;
+	padding:30px;
+}
+.show_color{
+	width:80px;
+	height:80px;
+	margin:0 20px;
+	/*background-image:url(../img/chis.png);*/
+	float:right;
+}
+.show_name{
+	font-size:40px;
+	font-weight:bold;
+	color:#555;
+	text-shadow:2px 2px 2px #eee;
+	float:right;
+	margin-top:13px;
+	font-style:italic;
+}
+#card .show_name{
+	color:#777;
+}
+
+/*Dicebox*/
+	
+#dice{
+	width:200px;
+	height:200px;
+	overflow:hidden;
+	/*background-image:url(../img/dice.png);*/
+	cursor:pointer;
+	position:absolute;
+	margin-top:300px;
+	margin-left:321px;
+}
+#dice_value{
+	width:200px;
+	height:200px;
+	/*background-image:url(../img/dice.png);*/
+	background-repeat:no-repeat;
+	background-position:200px 0;
+}
+
+#dice_value.v1{background-position:-200px 0}
+#dice_value.v2{background-position:-400px 0}
+#dice_value.v3{background-position:-600px 0}
+#dice_value.v4{background-position:-800px 0}
+#dice_value.v5{background-position:-1000px 0}
+#dice_value.v6{background-position:-1200px 0}
+#dice_value.v7{background-position:-1400px 0}
+
+
+/*Dibujo*/
+#canvas{	
+	background-color:#eee;
+	/*background-image:url(../img/canvas_bg.png);*/
+	background-repeat:no-repeat;
+	background-position:right 30px;
+	position:fixed;
+	z-index:150;
+	top:0;
+	left:0;
+}
+#canvas_control{
+	height:120px;
+	background-color:#e1e1e1;
+	border-top:1px solid #ccc;
+	width:100%;
+	position:fixed;
+	z-index:151;
+	bottom:0;
+	box-shadow:0 0 10px #d1d1d1;
+	-webkit-box-shadow:0 0 10px #d1d1d1;
+}
+	#canvas_clear{
+		height:85px;
+		padding-top:35px;
+		/*background-image:url(../img/controls.png);*/
+		background-position:left 0;
+		background-repeat:no-repeat;
+		margin:0 50px;
+		padding-left:130px;
+		color:#aaa;
+		font-size:40px;
+		text-shadow:2px 2px 2px #eee;
+		float:right;
+		cursor:pointer;
+	}
+	#canvas_hide{
+		height:85px;
+		padding-top:35px;
+		/*background-image:url(../img/controls.png);*/
+		background-position:left -120px;
+		background-repeat:no-repeat;
+		margin:0 50px;
+		padding-left:130px;
+		color:#aaa;
+		font-size:40px;
+		text-shadow:2px 2px 2px #eee;
+		float:left;
+		cursor:pointer;
+	}
+
+/*Historial*/
+.stats{
+	background-color:#e1e1e1;
+	padding:15px;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	margin:30px auto;
+}
+.stats td{
+	padding:15px;
+}
+	.stats .types div{
+		width:50px;
+		height:50px;
+		background-position:-25px -25px;
+		border-radius:6px;
+		-webkit-border-radius:6px;
+		font-size:18px;
+	}
+	.stats td{
+		font-size:18px;
+		color:#888;
+		font-weight:normal;
+		height:80px;
+		text-align:center;
+	}
+	.stats td .show_color{
+		margin:0;
+	}
+	.stats td.name{
+		color: #555555;
+		font-size: 22px;
+		text-shadow: 2px 2px 2px #EEEEEE;
+		text-align:left;
+		max-width:150px;
+		overflow:hidden;
+		font-weight:bold;
+	}
+	.stats .green{
+		color:#080;
+		font-weight:bold;
+	}
+	.stats .red{
+		color:#800;
+		font-weight:bold;
+	}
+
+
+/*Seciones que componen el tablero*/
+.section{
+	width:420px;
+	height:360px;
+	position:absolute;
+}
+.s1{
+	-moz-transform:rotate(144deg);
+	-webkit-transform:rotate(144deg);
+	-o-transform:rotate(144deg);
+	-ms-transform:rotate(144deg);
+	transform:rotate(144deg);
+	margin-left:23px;
+	margin-top:20px;
+}
+.s2{
+	-moz-transform:rotate(216deg);
+	-webkit-transform:rotate(216deg);
+	-o-transform:rotate(216deg);
+	-ms-transform:rotate(216deg);
+	transform:rotate(216deg);
+	margin-left:326px;
+	margin-top:-25px;
+}
+.s3{
+	-moz-transform:rotate(288deg);
+	-webkit-transform:rotate(288deg);
+	-o-transform:rotate(288deg);
+	-ms-transform:rotate(288deg);
+	transform:rotate(288deg);
+	margin-left:463px;
+	margin-top:249px;
+}
+.s4{
+	margin-left:244px;
+	margin-top:463px;
+}
+.s5{
+	-moz-transform:rotate(72deg);
+	-webkit-transform:rotate(72deg);
+	-o-transform:rotate(72deg);
+	-ms-transform:rotate(72deg);
+	transform:rotate(72deg);
+	margin-left:-28px;
+	margin-top:322px;
+}
+
+/*Pentagonos que componen las secciones*/
+.pentagon {
+	width:100px;
+	height:100px;
+	position:absolute;
+}
+.pentagon.central{
+	width:70px;
+	height:70px;
+	padding-top:70px;
+	padding-left:70px;
+	margin-left:346px;
+	margin-top:316px;
+	/*background-image:url(../img/central.png);*/
+}
+.p1{	
+	margin-top:168px;
+	margin-left:0px;
+	background-position:0 100px;
+}
+.p2{	
+	margin-top:232px;
+	margin-left:47px;
+	background-position:0 200px;
+}
+.p3{	
+	margin-top:256px;
+	margin-left:122px;
+	background-position:0 100px;
+}
+.p4{	
+	margin-top:232px;
+	margin-left:197px;
+	background-position:0 200px;
+}
+.p5{	
+	margin-top:143px;
+	margin-left:75px;
+	background-position:0 200px;
+}
+.p6{	
+	margin-top:79px;
+	margin-left:122px;
+	background-position:0 100px;
+}
+.p7{	
+	margin-top:0px;
+	margin-left:122px;
+	background-position:0 0;
+}
+.p8{	
+	margin-top:143px;
+	margin-left:168px;
+	background-position:0 200px;
+}
+.p9{	
+	margin-top:168px;
+	margin-left:244px;
+	background-position:0 100px;
+}
+.p10{	
+	margin-top:143px;
+	margin-left:319px;
+	background-position:0 200px;
+}
+
+/*Color (tipo de prueba)*/
+/*
+.c1{background-image:url(../img/c1.png)}
+.c2{background-image:url(../img/c2.png)}
+.c3{background-image:url(../img/c3.png)}
+.c4{background-image:url(../img/c4.png)}
+.c5{background-image:url(../img/c5.png)}
+.c6{background-image:url(../img/c6.png)}
+*/
+
+
+/*Quesitos*/
+.chis{
+	width:80px;
+	height:80px;
+	position:absolute;
+	z-index:50;
+	/*background-image:url(../img/chis.png);*/
+}
+.color1{background-position:0px 0}
+.color2{background-position:-80px 0}
+.color3{background-position:-160px 0}
+.color4{background-position:-240px 0}
+.color5{background-position:-320px 0}
+
+.disc{
+	width:80px;
+	height:80px;
+	position:absolute;
+	/*background-image:url(../img/chis.png);*/
+}
+.disc.d1{background-position:0 80px}
+.disc.d2{background-position:-80px 80px}
+.disc.d3{background-position:-160px 80px}
+.disc.d4{background-position:-240px 80px}
+.disc.d5{background-position:-320px 80px}
+
+
+.chis_mark{
+	width:80px;
+	height:80px;
+	position:absolute;
+	z-index:52;
+	border:10px solid #333;
+	border-radius:30px;
+	-webkit-border-radius:30px;
+	opacity:.80;
+	cursor:pointer;
+	-webkit-box-shadow:0px 0px 6px #aaa;
+	box-shadow:0px 0px 6px #aaa;
+}
+
+
+/** UNIFIED BACKGROUNDS **/
+/*
+
+.option{
+	background-image:url(../img/option_bar.png);
+}
+.change_color,.show_color,.chis,.disc{
+	background-image:url(../img/chis.png);
+}
+.c1{
+	background-image:url(../img/c1.png);
+}
+.c2{
+	background-image:url(../img/c2.png);
+}
+.c3{
+	background-image:url(../img/c3.png);
+}
+.c4{
+	background-image:url(../img/c4.png);
+}
+.c5{
+	background-image:url(../img/c5.png);
+}
+.c6{
+	background-image:url(../img/c6.png);
+}
+.cover_button,.delete_player,#add_player,#canvas_clear,#canvas_hide{
+	background-image:url(../img/controls.png);
+}
+#timeup{
+	background-image:url(../img/timeup.png);
+}
+.player input{
+	background-image:url(../img/edit_input.png);
+}
+#sandglass_box,#sandglass{
+	background-image:url(../img/sandglass.png);
+}
+#sand_up,#sand_down,#sand_fall{
+	background-image:url(../img/sand.png);
+}
+#dice,#dice_value{
+	background-image:url(../img/dice.png);
+}
+#canvas{	
+	background-image:url(../img/canvas_bg.png);
+}
+.pentagon.central{
+	background-image:url(../img/central.png);
+}
+*/

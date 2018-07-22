@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>adder</title>
+<style>
+.dot{
+	width:4px;
+	height:15px;
+	background-color:#900;
+	margin:5px;
+	position:absolute;
+	-moz-border-radius:5px;
+	border-radius:2px; 
+}
+#fps{
+	position:absolute;
+	font-size:20px;
+	bottom:0;
+	right:0;
+	z-index:25;
+}
+#menu{
+	position:absolute;
+	width:100%;
+	height:25px;
+	background-color:#f1f1f1;
+	border-top:1px solid #ccc;
+	z-index:20;
+	bottom:0;
+}
+body,html{
+	margin:0;
+	height:100%;
+	width:100%;
+	min-height:100%;
+	overflow:hidden;
+	font-family:Verdana, Geneva, sans-serif;
+	cursor:default;
+}
+input,input:disabled{
+	width:30px;
+	padding:5px;
+	border:none;
+	display:block;
+	float:left;	
+	border:1px solid #999;
+	font-size:10px;
+	color:#333;	
+	background-color:#FFF;
+}
+span{
+	display:block;
+	float:left;
+	background-color:#CCC;
+	text-align:center;
+	cursor:pointer;
+	font-size:10px;
+	padding:7px 4px;
+}
+b{
+	display:block;
+	float:left;
+	padding:7px 10px;
+	font-size:10px;
+	margin-left:10px;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="./code.js"></script>
+</head>
+
+<body>
+<div id="fps">100</div>
+
+<div id="menu">
+	<b>Dots:</b>
+	<span class="dots" title="down">&lt;</span><input type="text" id="dots" disabled="disabled"/><span class="dots" title="up">&gt;</span>
+	<b>Gravity:</b>
+	<span class="GRAVITY" title="-5">&lt;</span><input type="text" id="GRAVITY" disabled="disabled"/><span class="GRAVITY" title="5">&gt;</span>
+	<b>Mass:</b>
+	<span class="MASS" title="-1">&lt;</span><input type="text" id="MASS" disabled="disabled"/><span class="MASS" title="1">&gt;</span>
+	<b>Resistance:</b>
+	<span class="RESISTANCE" title="-.5">&lt;</span><input type="text" id="RESISTANCE" disabled="disabled"/><span class="RESISTANCE" title=".5">&gt;</span>
+	<b>Delta:</b>
+	<span class="DELTAT" title="-.001">&lt;</span><input type="text" id="DELTAT" disabled="disabled"/><span class="DELTAT" title=".001">&gt;</span>
+	<b>Spring:</b>
+	<span class="SPRINGK" title="-.5">&lt;</span><input type="text" id="SPRINGK" disabled="disabled"/><span class="SPRINGK" title=".5">&gt;</span>
+	<b>Bounce:</b>
+	<span class="BOUNCE" title="-.1">&lt;</span><input type="text" id="BOUNCE" disabled="disabled"/><span class="BOUNCE" title=".1">&gt;</span>
+</div>
+
+</body>
+</html>

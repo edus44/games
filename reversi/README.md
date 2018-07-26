@@ -3,10 +3,10 @@ Reversi (Othello) game
 
 A simple clone of Reversi or Othello game.
 
-Play it here [exp.hhweb.es/reversi](http://exp.hhweb.es/reversi)
+Play it here [https://edus44.github.io/games/reversi/](https://edus44.github.io/games/reversi/)
 
 
 ## Screenshot
-![](http://exp.hhweb.es/reversi/screenshot.png)
+![](./screenshot.png)
 
 _September 2010_
